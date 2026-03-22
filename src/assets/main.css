@@ -90,6 +90,106 @@
   .translate-z-100 {
     transform: translateZ(100px);
   }
+
+  /* --- NEW: Advanced Interaction Styles --- */
+  .cursor-trail {
+    pointer-events: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    background: rgba(26, 26, 26, 0.4);
+    border-radius: 50%;
+    z-index: 9999;
+    mix-blend-mode: difference;
+    transition: transform 0.1s ease-out, background 0.3s ease;
+  }
+
+  .cursor-glow {
+    pointer-events: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 70%);
+    border-radius: 50%;
+    z-index: 9998;
+    transform: translate(-50%, -50%);
+  }
+
+  .section-progress {
+    position: fixed;
+    right: 32px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    z-index: 40;
+  }
+
+  .progress-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 4px;
+    background: #d1d1d1;
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+  }
+
+  .progress-dot.active {
+    height: 32px;
+    background: #1a1a1a;
+  }
+
+  .progress-label {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%) translateX(10px);
+    opacity: 0;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #1a1a1a;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    pointer-events: none;
+  }
+
+  .progress-dot:hover .progress-label {
+    opacity: 1;
+    transform: translateY(-50%) translateX(0);
+  }
+
+  /* Skeleton Loading Shimmer */
+  .skeleton-shimmer {
+    background: linear-gradient(90deg, #f0f0f0 25%, #f8f8f8 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+  }
+
+  @keyframes shimmer {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+  }
+
+  /* Magnetic & Ken Burns */
+  .ken-burns {
+    animation: kenburns 20s infinite alternate;
+  }
+
+  @keyframes kenburns {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.15); }
+  }
+
+  .magnetic-button {
+    transition: transform 0.1s ease-out;
+  }
 }
 
 /* Custom Premium Range Slider */
