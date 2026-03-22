@@ -68,10 +68,10 @@ export const allProperties = [
 ];
 
 export const vibes = [
-    { id: 'zen', icon: '🧘‍♀️', label: 'Total Zen', desc: 'Remote cabin with fiber internet. Hear nothing but birds and fast download speeds.', img: 'https://images.unsplash.com/photo-1510798831971-661eb04b3739?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80' },
-    { id: 'party', icon: '🪩', label: 'Entertainer', desc: 'Open-plan penthouse. Fits 50 of your closest friends and a DJ booth.', img: 'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80' },
-    { id: 'nature', icon: '🌲', label: 'Nature Lover', desc: 'Floor-to-ceiling windows facing a private forest. Basically a terrarium for humans.', img: 'https://images.unsplash.com/photo-1449844908441-8829872d2607?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80' },
-    { id: 'city', icon: '☕', label: 'Urban Explorer', desc: 'Steps away from a $7 artisanal coffee shop. The ultimate city flex.', img: 'https://images.unsplash.com/photo-1496355325608-4e8910403328?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80' }
+    { id: 'zen', icon: 'ph-leaf', label: 'Total Zen', desc: 'Remote cabin with fiber internet. Hear nothing but birds and fast download speeds.', img: 'https://images.unsplash.com/photo-1510798831971-661eb04b3739?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80' },
+    { id: 'party', icon: 'ph-star', label: 'Entertainer', desc: 'Open-plan penthouse. Fits 50 of your closest friends and a DJ booth.', img: 'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80' },
+    { id: 'nature', icon: 'ph-tree', label: 'Nature Lover', desc: 'Floor-to-ceiling windows facing a private forest. Basically a terrarium for humans.', img: 'https://images.unsplash.com/photo-1449844908441-8829872d2607?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80' },
+    { id: 'city', icon: 'ph-coffee', label: 'Urban Explorer', desc: 'Steps away from a $7 artisanal coffee shop. The ultimate city flex.', img: 'https://images.unsplash.com/photo-1496355325608-4e8910403328?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80' }
 ];
 
 export const testimonials = [
