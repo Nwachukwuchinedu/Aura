@@ -10,7 +10,7 @@ interface Vibe {
   img: string;
 }
 
-const activeVibe = ref<Vibe>(vibes[0]);
+const activeVibe = ref<Vibe>(vibes[0] as Vibe);
 </script>
 
 <template>

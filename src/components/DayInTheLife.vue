@@ -49,7 +49,7 @@ onUnmounted(() => {
   <section class="py-24 bg-brand-950 overflow-hidden relative">
     <!-- Ambient Light Shift Background -->
     <div class="absolute inset-0 transition-colors duration-1000" 
-         :style="`background-color: ${times[activeIndex].ambient}`"></div>
+         :style="`background-color: ${times[activeIndex]?.ambient || 'transparent'}`"></div>
     
     <div class="max-w-7xl mx-auto px-4 md:px-8 mb-16 relative z-10">
       <div class="flex flex-col md:flex-row justify-between items-end gap-6">

@@ -195,11 +195,13 @@
 /* Custom Premium Range Slider */
 input[type=range].premium-slider {
   -webkit-appearance: none;
+  appearance: none;
   width: 100%;
   background: transparent;
 }
 input[type=range].premium-slider::-webkit-slider-thumb {
   -webkit-appearance: none;
+  appearance: none;
   height: 24px;
   width: 24px;
   border-radius: 50%;
