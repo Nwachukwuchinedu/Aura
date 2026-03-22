@@ -1,3 +1,7 @@
+<script setup lang="ts">
+import { Glasses, TrendingUp, Handshake, Home } from 'lucide-vue-next';
+</script>
+
 <template>
   <section id="services" class="py-24 px-4 md:px-8 bg-brand-950 text-white rounded-[2.5rem] md:rounded-[4rem] mx-2 md:mx-4 my-8 reveal-section">
     <div class="max-w-7xl mx-auto">
@@ -11,8 +15,8 @@
         <div class="md:col-span-2 relative rounded-3xl overflow-hidden p-8 flex flex-col justify-end dark-glass reveal-up">
           <img src="https://images.unsplash.com/photo-1628611225249-6c0ea04f29e1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Interior" class="absolute inset-0 w-full h-full object-cover opacity-40 hover:opacity-60 transition-opacity duration-700">
           <div class="relative z-10">
-            <div class="w-12 h-12 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center mb-4">
-              <i class="ph ph-virtual-reality text-2xl"></i>
+            <div class="w-12 h-12 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center mb-4 text-white">
+              <Glasses :size="24" />
             </div>
             <h3 class="text-2xl font-bold mb-2">Virtual Tours</h3>
             <p class="text-brand-300 max-w-md">Experience properties in immersive 3D from the comfort of your current home.</p>
@@ -21,8 +25,8 @@
 
         <!-- Bento Box 2 -->
         <div class="bg-brand-900 rounded-3xl p-8 flex flex-col justify-between border border-brand-800 hover:border-brand-600 transition-colors reveal-up transition-delay-100">
-          <div class="w-12 h-12 rounded-full bg-brand-800 flex items-center justify-center">
-            <i class="ph ph-chart-line-up text-2xl"></i>
+          <div class="w-12 h-12 rounded-full bg-brand-800 flex items-center justify-center text-white">
+            <TrendingUp :size="24" />
           </div>
           <div>
             <h3 class="text-2xl font-bold mb-2">Market Insights</h3>
@@ -32,8 +36,8 @@
 
         <!-- Bento Box 3 -->
         <div class="bg-brand-900 rounded-3xl p-8 flex flex-col justify-between border border-brand-800 hover:border-brand-600 transition-colors reveal-up transition-delay-200">
-          <div class="w-12 h-12 rounded-full bg-brand-800 flex items-center justify-center">
-            <i class="ph ph-handshake text-2xl"></i>
+          <div class="w-12 h-12 rounded-full bg-brand-800 flex items-center justify-center text-white">
+            <Handshake :size="24" />
           </div>
           <div>
             <h3 class="text-2xl font-bold mb-2">Expert Agents</h3>
@@ -53,7 +57,7 @@
               Get Free Valuation
             </button>
           </div>
-          <i class="ph-fill ph-house-line text-9xl text-white/5 relative z-10 hidden sm:block"></i>
+          <Home :size="120" class="text-white/5 relative z-10 hidden sm:block" />
         </div>
       </div>
     </div>

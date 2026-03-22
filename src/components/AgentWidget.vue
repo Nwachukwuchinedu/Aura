@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue';
+import { X, MessageCircleMore, MessagesSquare } from 'lucide-vue-next';
 
 const isOpen = ref(false);
 
@@ -22,7 +23,7 @@ const agents = [
           <div class="flex items-center justify-between">
             <h4 class="text-xl font-bold text-brand-950 uppercase tracking-tight">Active Agents</h4>
             <button @click="isOpen = false" class="w-8 h-8 rounded-full hover:bg-brand-50 transition-colors flex items-center justify-center">
-              <i class="ph ph-x"></i>
+              <X :size="20" />
             </button>
           </div>
           
@@ -44,7 +45,7 @@ const agents = [
                 </div>
               </div>
               <div class="ml-auto opacity-0 group-hover:opacity-100 transition-opacity">
-                <i class="ph ph-chat-circle-dots text-xl text-brand-950"></i>
+                <MessageCircleMore :size="20" class="text-brand-950" />
               </div>
             </div>
           </div>
@@ -60,7 +61,7 @@ const agents = [
     <button @click="isOpen = !isOpen" 
             class="w-16 h-16 rounded-full bg-brand-950 text-white flex items-center justify-center shadow-[0_12px_32px_rgba(26,26,26,0.3)] hover:scale-110 active:scale-95 transition-all duration-300 relative group overflow-hidden">
       <div class="absolute inset-0 bg-gradient-to-tr from-brand-900 to-brand-800 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-      <i class="ph ph-chats-circle text-3xl relative z-10 transition-transform group-hover:rotate-12"></i>
+      <MessagesSquare :size="28" class="relative z-10 transition-transform group-hover:rotate-12" />
       <div class="absolute -top-1 -right-1 w-5 h-5 bg-green-500 rounded-full border-2 border-white shadow-[0_0_12px_#22c55e] z-20 flex items-center justify-center text-[10px] font-bold">
         3
       </div>

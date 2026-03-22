@@ -6,6 +6,7 @@ import MortgageModal from './MortgageModal.vue';
 import RecentlyViewed from './RecentlyViewed.vue';
 import { allProperties } from '../data/mockData';
 import { store } from '../store';
+import { Search, Loader2, ChevronDown, Home } from 'lucide-vue-next';
 
 const searchQuery = ref('');
 const activeCategory = ref('All');
@@ -76,12 +77,12 @@ watch([searchQuery, activeCategory, filterPrice, filterBeds], () => {
         </div>
         
         <div class="relative w-full md:w-auto md:min-w-[340px]">
-          <i class="ph ph-magnifying-glass absolute left-6 top-1/2 -translate-y-1/2 text-brand-400 text-xl"></i>
+          <Search class="absolute left-6 top-1/2 -translate-y-1/2 text-brand-400 w-5 h-5" />
           <input v-model="searchQuery" type="text" placeholder="Search name or location..." 
                  class="w-full pl-14 pr-12 py-5 rounded-full border border-brand-200 bg-white shadow-xl focus:outline-none focus:border-brand-950 focus:ring-1 focus:ring-brand-950 transition-all text-sm font-bold uppercase tracking-widest placeholder:text-brand-300">
           
           <div v-show="isFiltering" class="absolute right-6 top-1/2 -translate-y-1/2 text-brand-400">
-            <i class="ph ph-circle-notch animate-spin text-xl"></i>
+            <Loader2 class="animate-spin w-5 h-5" />
           </div>
         </div>
       </div>
@@ -111,7 +112,7 @@ watch([searchQuery, activeCategory, filterPrice, filterBeds], () => {
               <option value="2m-5m">$2M - $5M</option>
               <option value="5m-plus">$5M+</option>
             </select>
-            <i class="ph ph-caret-down absolute right-6 top-1/2 -translate-y-1/2 text-brand-400 pointer-events-none"></i>
+            <ChevronDown class="absolute right-6 top-1/2 -translate-y-1/2 text-brand-400 w-5 h-5 pointer-events-none" />
           </div>
           <div class="relative min-w-[140px]">
             <select v-model="filterBeds" class="w-full appearance-none bg-white/80 border border-brand-200 rounded-full pl-6 pr-12 py-3.5 text-[10px] font-black uppercase tracking-widest text-brand-700 outline-none focus:border-brand-950 transition-colors cursor-pointer shadow-lg hover:bg-white transition-all">
@@ -120,7 +121,7 @@ watch([searchQuery, activeCategory, filterPrice, filterBeds], () => {
               <option value="3">3+ Beds</option>
               <option value="4">4+ Beds</option>
             </select>
-            <i class="ph ph-caret-down absolute right-6 top-1/2 -translate-y-1/2 text-brand-400 pointer-events-none"></i>
+            <ChevronDown class="absolute right-6 top-1/2 -translate-y-1/2 text-brand-400 w-5 h-5 pointer-events-none" />
           </div>
         </div>
       </div>
@@ -152,7 +153,7 @@ watch([searchQuery, activeCategory, filterPrice, filterBeds], () => {
 
       <div v-if="!isFiltering && filteredProperties.length === 0" class="w-full py-32 text-center flex flex-col items-center justify-center bg-white rounded-[4rem] border border-brand-100 reveal-up shadow-2xl">
         <div class="w-24 h-24 bg-brand-50 rounded-full flex items-center justify-center mb-8 shadow-inner">
-          <i class="ph ph-house-line text-4xl text-brand-200"></i>
+          <Home class="w-10 h-10 text-brand-200" />
         </div>
         <h3 class="text-3xl font-black text-brand-950 mb-3 uppercase tracking-tighter">Zero results matched.</h3>
         <p class="text-brand-500 max-w-sm font-medium">Try broadening your search or resetting all filters for a fresh look.</p>

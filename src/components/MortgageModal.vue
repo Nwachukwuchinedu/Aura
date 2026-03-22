@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue';
 import { store } from '../store';
+import { X } from 'lucide-vue-next';
 
 const downPaymentPercent = ref(20);
 const interestRate = ref(6.5);
@@ -46,7 +47,7 @@ const chartOffset = computed(() => {
           <!-- Close Button -->
           <button @click="closeModal" 
                   class="absolute top-8 right-8 w-12 h-12 rounded-full glass-panel flex items-center justify-center text-brand-950 hover:bg-brand-50 transition-colors z-20">
-            <i class="ph ph-x text-2xl"></i>
+            <X :size="24" />
           </button>
 
           <!-- Left Panel: Form -->

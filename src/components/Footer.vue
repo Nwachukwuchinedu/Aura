@@ -1,8 +1,12 @@
+<script setup lang="ts">
+import { Send, Building2, Twitter, Instagram, Linkedin } from 'lucide-vue-next';
+</script>
+
 <template>
   <footer id="contact" class="pt-24 pb-8 px-4 md:px-8 max-w-7xl mx-auto">
     <div class="bg-brand-100 rounded-[3rem] p-12 md:p-20 text-center flex flex-col items-center justify-center reveal-section">
       <div class="w-16 h-16 rounded-full bg-brand-950 text-white flex items-center justify-center text-3xl mb-8 -mt-24 shadow-xl shadow-brand-950/20">
-        <i class="ph-fill ph-paper-plane-tilt"></i>
+        <Send :size="32" />
       </div>
       <h2 class="text-4xl md:text-6xl font-bold tracking-tight text-brand-950 mb-6 max-w-2xl">
         Let's find your dream home together.
@@ -23,15 +27,15 @@
       <div class="col-span-2 lg:col-span-2">
         <a href="#" class="flex items-center gap-2 mb-6">
           <div class="w-8 h-8 rounded-full bg-brand-950 flex items-center justify-center text-white">
-            <i class="ph ph-buildings"></i>
+            <Building2 :size="16" />
           </div>
           <span class="font-bold text-2xl tracking-tight text-brand-950">Aura</span>
         </a>
         <p class="text-brand-500 max-w-xs mb-6">Reimagining the real estate experience through exceptional design, modern tech, and personalized service.</p>
         <div class="flex gap-4 text-brand-400">
-          <a href="#" class="hover:text-brand-950 transition-colors"><i class="ph-fill ph-twitter-logo text-2xl"></i></a>
-          <a href="#" class="hover:text-brand-950 transition-colors"><i class="ph-fill ph-instagram-logo text-2xl"></i></a>
-          <a href="#" class="hover:text-brand-950 transition-colors"><i class="ph-fill ph-linkedin-logo text-2xl"></i></a>
+          <a href="#" class="hover:text-brand-950 transition-colors"><Twitter :size="20" /></a>
+          <a href="#" class="hover:text-brand-950 transition-colors"><Instagram :size="20" /></a>
+          <a href="#" class="hover:text-brand-950 transition-colors"><Linkedin :size="20" /></a>
         </div>
       </div>
       

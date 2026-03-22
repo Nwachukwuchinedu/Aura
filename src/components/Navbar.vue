@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref, onMounted, watch } from 'vue';
 import { animate } from 'motion';
+import { Building2, Menu, X } from 'lucide-vue-next';
 
 const scrolled = ref(false);
 const mobileMenuOpen = ref(false);
@@ -31,7 +32,7 @@ onMounted(() => {
       <!-- Logo -->
       <a href="#" class="flex items-center gap-3 group">
         <div class="w-10 h-10 rounded-full bg-brand-950 flex items-center justify-center text-white transition-transform duration-700 group-hover:rotate-180 shadow-lg">
-          <i class="ph ph-buildings text-2xl"></i>
+          <Building2 :size="20" />
         </div>
         <span class="font-black text-2xl tracking-tighter uppercase text-brand-950">Aura</span>
       </a>
@@ -61,8 +62,9 @@ onMounted(() => {
         <a href="#contact" class="hidden md:flex bg-brand-950 text-white px-8 py-3 rounded-full text-[10px] font-bold uppercase tracking-widest hover:bg-brand-800 transition-all hover:scale-105 duration-300 ease-out active:scale-95 shadow-xl magnetic-button">
           Let's Talk
         </a>
-        <button @click="mobileMenuOpen = !mobileMenuOpen" class="md:hidden text-3xl p-1 text-brand-950 transform active:scale-90 transition-transform">
-          <i class="ph" :class="mobileMenuOpen ? 'ph-x' : 'ph-list-bold'"></i>
+        <button @click="mobileMenuOpen = !mobileMenuOpen" class="md:hidden flex items-center justify-center text-brand-950 transform active:scale-90 transition-transform">
+          <Menu v-if="!mobileMenuOpen" :size="32" />
+          <X v-else :size="32" />
         </button>
       </div>
     </div>

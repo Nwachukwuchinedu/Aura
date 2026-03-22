@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { onMounted, ref } from 'vue';
 import { animate, inView, stagger } from 'motion';
+import { MapPin, ArrowRight, Phone } from 'lucide-vue-next';
 
 const heroText = "Find the place where you belong.";
 const words = heroText.split(' ');
@@ -55,12 +56,12 @@ onMounted(() => {
         <!-- Search Bar Widget -->
         <div class="mt-4 glass-panel p-2 rounded-full flex flex-col sm:flex-row gap-2 max-w-2xl reveal-up shadow-2xl border border-white/40">
           <div class="flex-1 flex items-center px-6 py-2 bg-white/80 rounded-full">
-            <i class="ph ph-map-pin text-xl text-brand-400 mr-3"></i>
+            <MapPin class="w-5 h-5 text-brand-400 mr-3" />
             <input type="text" placeholder="Location, City, or Zip" class="w-full bg-transparent border-none outline-none text-brand-900 placeholder:text-brand-400 text-sm font-medium">
           </div>
           <button class="bg-brand-950 text-white px-10 py-4 rounded-full font-bold text-xs uppercase tracking-widest hover:bg-brand-800 transition-colors flex items-center justify-center gap-3 group magnetic-button">
             <span>Search</span>
-            <i class="ph ph-arrow-right group-hover:translate-x-1 transition-transform"></i>
+            <ArrowRight class="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </button>
         </div>
 
@@ -91,7 +92,7 @@ onMounted(() => {
             <p class="text-xs font-bold text-brand-400 uppercase tracking-widest">Top Rated Agent</p>
           </div>
           <div class="ml-4 w-10 h-10 rounded-full bg-brand-950 text-white flex items-center justify-center shadow-lg magnetic-button">
-            <i class="ph ph-phone text-xl"></i>
+            <Phone :size="20" />
           </div>
         </div>
       </div>

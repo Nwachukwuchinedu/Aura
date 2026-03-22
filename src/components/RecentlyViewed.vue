@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { store } from '../store';
+import { X } from 'lucide-vue-next';
 
 const removeFromHistory = (title: string) => {
   store.recentlyViewed = store.recentlyViewed.filter(p => p.title !== title);
@@ -27,7 +28,7 @@ const removeFromHistory = (title: string) => {
             </div>
             <button @click="removeFromHistory(property.title)" 
                     class="absolute -top-1 -right-1 w-5 h-5 rounded-full bg-brand-950 text-white flex items-center justify-center shadow-lg opacity-0 group-hover:opacity-100 transition-opacity">
-              <i class="ph ph-x text-[8px]"></i>
+                <X :size="10" />
             </button>
           </div>
         </transition-group>

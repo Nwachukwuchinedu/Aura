@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue';
+import { Wand2, Check, TrendingUp } from 'lucide-vue-next';
 
 const parallaxCard = ref<HTMLElement | null>(null);
 const cardRotateX = ref(0);
@@ -44,7 +45,7 @@ const resetCardHover = () => {
       <!-- Text Content -->
       <div class="lg:w-1/2">
         <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-purple-200 bg-purple-50 text-purple-700 w-fit mb-6 reveal-up">
-          <i class="ph-fill ph-magic-wand"></i>
+          <Wand2 :size="16" />
           <span class="text-xs font-bold tracking-wide uppercase">Aura Vision™ AI</span>
         </div>
         <h2 class="text-4xl md:text-6xl font-bold tracking-tight text-brand-950 mb-6 reveal-up transition-delay-100">
@@ -55,11 +56,11 @@ const resetCardHover = () => {
         </p>
         <ul class="space-y-4 mb-8 reveal-up transition-delay-300">
           <li class="flex items-center gap-3 text-brand-800 font-medium">
-            <div class="w-6 h-6 rounded-full bg-brand-100 flex items-center justify-center text-brand-950"><i class="ph ph-check"></i></div>
+            <div class="w-6 h-6 rounded-full bg-brand-100 flex items-center justify-center text-brand-950"><Check :size="14" /></div>
             Real-time demographic shifts
           </li>
           <li class="flex items-center gap-3 text-brand-800 font-medium">
-            <div class="w-6 h-6 rounded-full bg-brand-100 flex items-center justify-center text-brand-950"><i class="ph ph-check"></i></div>
+            <div class="w-6 h-6 rounded-full bg-brand-100 flex items-center justify-center text-brand-950"><Check :size="14" /></div>
             Infrastructure development tracking
           </li>
         </ul>
@@ -92,7 +93,7 @@ const resetCardHover = () => {
               <p class="text-white/70 text-sm font-medium mb-1">Predicted 5-Year Growth</p>
               <div class="flex items-end gap-3 mb-4">
                 <h4 class="text-4xl font-bold text-white">+24.8%</h4>
-                <span class="text-green-400 flex items-center text-sm font-bold pb-1"><i class="ph-fill ph-trend-up mr-1"></i> High Confidence</span>
+                <span class="text-green-400 flex items-center text-sm font-bold pb-1"><TrendingUp :size="16" class="mr-1" /> High Confidence</span>
               </div>
               
               <div class="w-full h-12 flex items-end justify-between gap-1 mt-2">

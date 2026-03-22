@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { store } from '../store';
+import { X } from 'lucide-vue-next';
 
 const removeFromCompare = (title: string) => {
   store.removeFromCompare(title);
@@ -35,7 +36,7 @@ const removeFromCompare = (title: string) => {
               </div>
               <button @click="removeFromCompare(property.title)" 
                       class="absolute -top-2 -right-2 w-6 h-6 rounded-full bg-brand-950 text-white flex items-center justify-center shadow-lg hover:bg-brand-800 transition-colors">
-                <i class="ph ph-x text-[10px]"></i>
+                <X :size="12" />
               </button>
             </div>
           </transition-group>

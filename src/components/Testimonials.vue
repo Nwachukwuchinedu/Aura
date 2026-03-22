@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { testimonials } from '../data/mockData';
+import { Quote } from 'lucide-vue-next';
 </script>
 
 <template>
@@ -14,7 +15,7 @@ import { testimonials } from '../data/mockData';
            class="bg-white p-8 rounded-[2rem] border border-brand-100 shadow-sm hover:shadow-xl transition-all duration-500 flex flex-col justify-between group">
         <div>
           <div class="text-brand-300 text-4xl mb-6 group-hover:text-brand-950 transition-colors animate-float" :style="{ animationDelay: `${index * 0.5}s` }">
-            <i class="ph-fill ph-quotes"></i>
+            <Quote :size="48" fill="currentColor" />
           </div>
           <p class="text-xl font-medium text-brand-900 leading-relaxed mb-8">
             "{{ test.quote }}"

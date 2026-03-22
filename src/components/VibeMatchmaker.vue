@@ -1,6 +1,15 @@
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref, computed } from 'vue';
 import { vibes } from '../data/mockData';
+import { Sparkles, Leaf, Star, TreePine, Coffee } from 'lucide-vue-next';
+
+const iconMap: Record<string, any> = {
+  'ph-sparkle': Sparkles,
+  'ph-leaf': Leaf,
+  'ph-star': Star,
+  'ph-tree': TreePine,
+  'ph-coffee': Coffee
+};
 
 interface Vibe {
   id: string;
@@ -21,7 +30,7 @@ const activeVibe = ref<Vibe>(vibes[0] as Vibe);
       
       <div class="lg:w-1/2 relative z-10">
         <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-brand-300 bg-white/50 w-fit mb-6">
-          <i class="ph ph-sparkle text-xl text-brand-500"></i>
+          <Sparkles :size="20" class="text-brand-500" />
           <span class="text-xs font-semibold tracking-wide uppercase text-brand-800">The Vibe Check</span>
         </div>
         <h2 class="text-4xl md:text-5xl font-bold tracking-tight text-brand-950 mb-6">
@@ -36,7 +45,7 @@ const activeVibe = ref<Vibe>(vibes[0] as Vibe);
                   @click="activeVibe = vibe"
                   class="px-6 py-4 rounded-full font-medium transition-all duration-300 flex items-center gap-3 border shadow-sm hover:-translate-y-1"
                   :class="activeVibe.id === vibe.id ? 'bg-brand-950 text-white border-brand-950 scale-105' : 'bg-white text-brand-700 border-brand-200 hover:border-brand-400'">
-            <i class="text-2xl" :class="`ph ${vibe.icon}`"></i>
+            <component :is="iconMap[vibe.icon] || Sparkles" :size="24" />
             <span>{{ vibe.label }}</span>
           </button>
         </div>

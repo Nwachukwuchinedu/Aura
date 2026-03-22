@@ -2,6 +2,7 @@
 import { ref, onMounted } from 'vue';
 import { store } from '../store';
 import { animate } from 'motion';
+import { Plus, Heart, MapPin, BedDouble, Bath, Maximize, ArrowUpRight } from 'lucide-vue-next';
 
 interface Property {
   title: string;
@@ -61,10 +62,10 @@ onMounted(() => {
       <div class="absolute top-4 right-4 flex gap-2">
         <button @click.stop="store.addToCompare(property)" 
                 class="w-10 h-10 rounded-full glass-panel flex items-center justify-center text-brand-950 hover:bg-brand-950 hover:text-white transition-all transform hover:scale-110">
-          <i class="ph ph-plus text-xl"></i>
+          <Plus :size="20" />
         </button>
         <button class="w-10 h-10 rounded-full glass-panel flex items-center justify-center text-brand-950 hover:bg-white hover:text-red-500 transition-colors">
-          <i class="ph ph-heart text-xl"></i>
+          <Heart :size="20" />
         </button>
       </div>
     </div>
@@ -75,13 +76,13 @@ onMounted(() => {
           <h3 class="text-xl font-bold text-brand-950 leading-tight transition-colors">{{ property.title }}</h3>
         </div>
         <p class="text-brand-500 text-sm flex items-center gap-1 mb-4">
-          <i class="ph ph-map-pin"></i> {{ property.location }}
+          <MapPin :size="14" /> {{ property.location }}
         </p>
         
         <div class="flex items-center gap-4 text-sm font-medium text-brand-700 mb-6">
-          <span class="flex items-center gap-1"><i class="ph ph-bed text-lg"></i> {{ property.beds }}</span>
-          <span class="flex items-center gap-1"><i class="ph ph-shower text-lg"></i> {{ property.baths }}</span>
-          <span class="flex items-center gap-1"><i class="ph ph-squares-four text-lg"></i> {{ property.sqft }}</span>
+          <span class="flex items-center gap-1"><BedDouble :size="18" /> {{ property.beds }}</span>
+          <span class="flex items-center gap-1"><Bath :size="18" /> {{ property.baths }}</span>
+          <span class="flex items-center gap-1"><Maximize :size="18" /> {{ property.sqft }}</span>
         </div>
 
         <!-- NEW: Price History Mini Sparkline -->
@@ -107,7 +108,7 @@ onMounted(() => {
         <div class="text-2xl font-bold text-brand-950">${{ property.price.toLocaleString() }}</div>
         <button @click.stop="store.openMortgageModal(property)" 
                 class="w-10 h-10 rounded-full bg-brand-950 text-white flex items-center justify-center hover:bg-brand-800 transition-colors magnetic-button">
-          <i class="ph ph-arrow-up-right text-lg"></i>
+          <ArrowUpRight :size="18" />
         </button>
       </div>
     </div>
