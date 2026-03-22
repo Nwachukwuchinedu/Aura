@@ -1,35 +1,156 @@
-@import './base.css';
+@import "tailwindcss";
 
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  font-weight: normal;
-}
+@theme {
+  --font-sans: "Plus Jakarta Sans", sans-serif;
+  
+  --color-brand-50: #f6f6f6;
+  --color-brand-100: #e7e7e7;
+  --color-brand-200: #d1d1d1;
+  --color-brand-300: #b0b0b0;
+  --color-brand-400: #888888;
+  --color-brand-500: #6d6d6d;
+  --color-brand-600: #5d5d5d;
+  --color-brand-700: #4f4f4f;
+  --color-brand-800: #454545;
+  --color-brand-900: #3d3d3d;
+  --color-brand-950: #1a1a1a;
 
-a,
-.green {
-  text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
-  transition: 0.4s;
-  padding: 3px;
-}
+  --animate-blob: blob 7s infinite;
+  --animate-float: float 4s ease-in-out infinite;
+  --animate-spin-slow: spin 15s linear infinite;
 
-@media (hover: hover) {
-  a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
+  @keyframes blob {
+    0% { transform: translate(0px, 0px) scale(1); }
+    33% { transform: translate(30px, -50px) scale(1.1); }
+    66% { transform: translate(-20px, 20px) scale(0.9); }
+    100% { transform: translate(0px, 0px) scale(1); }
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
   }
 }
 
-@media (min-width: 1024px) {
+/* Custom utilities for Framer-like feel */
+@layer base {
   body {
-    display: flex;
-    place-items: center;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    @apply bg-brand-50 text-brand-950;
+  }
+}
+
+@layer utilities {
+  .glass-panel {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
   }
 
-  #app {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 0 2rem;
+  .dark-glass {
+    background: rgba(26, 26, 26, 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
   }
+
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  /* Initial states for Motion One animations */
+  .reveal-up, .reveal-fade, .reveal-stagger-item, .reveal-section {
+    opacity: 0;
+    will-change: transform, opacity;
+  }
+  
+  .reveal-clip {
+    clip-path: inset(100% 0 0 0 round 2.5rem);
+    will-change: clip-path;
+  }
+
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+  .transform-style-3d {
+    transform-style: preserve-3d;
+  }
+  .translate-z-50 {
+    transform: translateZ(50px);
+  }
+  .translate-z-80 {
+    transform: translateZ(80px);
+  }
+  .translate-z-100 {
+    transform: translateZ(100px);
+  }
+}
+
+/* Custom Premium Range Slider */
+input[type=range].premium-slider {
+  -webkit-appearance: none;
+  width: 100%;
+  background: transparent;
+}
+input[type=range].premium-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 24px;
+  width: 24px;
+  border-radius: 50%;
+  background: #1a1a1a;
+  cursor: pointer;
+  margin-top: -10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  border: 2px solid #ffffff;
+  transition: transform 0.1s;
+}
+input[type=range].premium-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.15);
+}
+input[type=range].premium-slider::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 4px;
+  cursor: pointer;
+  background: #d1d1d1;
+  border-radius: 2px;
+}
+input[type=range].premium-slider:focus {
+  outline: none;
+}
+
+@keyframes slide {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* --- Vue Transitions (Global) --- */
+.property-list-move,
+.property-list-enter-active,
+.property-list-leave-active {
+  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.property-list-enter-from,
+.property-list-leave-to {
+  opacity: 0;
+  transform: translateY(30px) scale(0.95);
+}
+.property-list-leave-active {
+  position: absolute;
+  z-index: -1;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+  transform: scale(0.98);
 }
